@@ -1,5 +1,5 @@
-# Copyright 2023 Gabriel Sanches
-# Distributed under the terms of the Zero-Clause BSD License
+# Copyright 2021-2022 Aisha Tammy
+# Distributed under the terms of the ISC License
 
 EAPI=8
 
@@ -11,48 +11,56 @@ KEYWORDS="~amd64"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="test"
+IUSE="+man pie test +X"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
 	dev-libs/libevdev
 	dev-libs/libinput
 	dev-libs/wayland
-	>=gui-libs/wlroots-0.16.0:=[X]
-	x11-libs/cairo[X]
-	x11-libs/libxkbcommon:=[X]
+	>=gui-libs/wlroots-0.16.0:=[X?]
+	x11-libs/libxkbcommon:=[X?]
 	x11-libs/pixman
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
 	|| ( >=dev-lang/zig-0.10.0 >=dev-lang/zig-bin-0.10.0 )
 	dev-libs/wayland-protocols
+	man? ( app-text/scdoc )
 	virtual/pkgconfig
-	app-text/scdoc
 "
 
-QA_FLAGS_IGNORED="usr/bin/river*"
-
-src_configure() {
-	export zigoptions=(
-		--verbose
-		-Drelease-safe
-		-Dxwayland=true
-		-Dman-pages=true
-		"${EXTRA_ECONF[@]}"
-	)
-}
+QA_FLAGS_IGNORED="usr/bin/river(ctl|tile)?"
 
 src_compile() {
-	zig build "${zigoptions[@]}" --prefix "${T}/temp_install" || die
+	local zigoptions=(
+		--verbose
+		-Drelease-safe
+	)
+
+	if use man ; then
+		zigoptions+=("-Dman-pages")
+	fi
+
+	if use pie ; then
+		zigoptions+=("-Dpie")
+	fi
+
+	if use X ; then
+		zigoptions+=("-Dxwayland")
+	fi
+
+	zigoptions+=("${EXTRA_ECONF[@]}")
+
+	DESTDIR="${T}" zig build "${zigoptions[@]}" --prefix /usr || die
 }
 
 src_test() {
-	zig build test "${zigoptions[@]}" --prefix "${T}/temp_install" || die
+	zig build test || die
 }
 
 src_install() {
-	zig build install "${zigoptions[@]}" --prefix "${ED}/usr" || die
-	mkdir "${ED}"/usr/etc || die
-	mv "${ED}"/usr/etc "${ED}" || die
+	cp -r "${T}"/usr "${ED}"/usr || die
+
+	dodoc -r README.md example || die
 }
