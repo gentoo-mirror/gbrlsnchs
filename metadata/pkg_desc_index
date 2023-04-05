@@ -1,3 +1,4 @@
 app-admin/park 1.1.2: Configuration-based dotfiles manager
+dev-java/jdtls-bin 1.21.0: Java language server
 net-libs/deno 1.30.3: A modern runtime for JavaScript and TypeScript
 net-misc/grpcurl 1.8.7: Command-line tool for interacting with gRPC servers
