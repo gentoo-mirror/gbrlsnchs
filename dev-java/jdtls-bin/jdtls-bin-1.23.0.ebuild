@@ -9,7 +9,7 @@ MY_PN=${PN%%-bin}
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Java language server"
-SRC_URI="https://www.eclipse.org/downloads/download.php?file=/${MY_PN}/milestones/1.21.0/jdt-language-server-${PV}-202303161431.tar.gz -> ${MY_P}.tar.gz"
+SRC_URI="https://www.eclipse.org/downloads/download.php?file=/${MY_PN}/milestones/${PV}/jdt-language-server-${PV}-202304271346.tar.gz -> ${MY_P}.tar.gz"
 HOMEPAGE="https://github.com/eclipse/eclipse.jdt.ls"
 
 LICENSE="EPL"
