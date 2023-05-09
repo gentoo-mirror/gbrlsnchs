@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Really simple suspend script (from Void Linux)
+EAPI=8
+HOMEPAGE=https://github.com/void-linux/void-runit
+KEYWORDS=~amd64
+LICENSE=CC0-1.0
+SLOT=0
+SRC_URI=https://github.com/void-linux/void-runit/archive/refs/tags/20230413.tar.gz -> zzz-20230413.tar.gz
+_md5_=4b6b926cc2c663aacbee7dad949b592c
