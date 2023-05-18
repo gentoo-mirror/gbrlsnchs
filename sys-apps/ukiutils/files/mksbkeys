@@ -1,0 +1,45 @@
+#!/bin/sh
+
+keys_db=/etc/secureboot/keys
+if [ -d "${keys_db}" ]; then
+	# Prevent existing keys to be deleted.
+	echo "error: '${keys_db}' exists" && exit 1
+fi
+
+sbdir=/usr/local/share/secureboot
+
+mkdir --parents "${sbdir}"
+cd "${sbdir}"
+uuid="$(uuidgen --random)"
+
+# Platform Key
+
+openssl req -newkey rsa:4096 -nodes -keyout PK.key -new -x509 -sha256 -days 3650 -subj "/CN=Gentoo Platform Key/" -out PK.crt
+openssl x509 -outform DER -in PK.crt -out PK.cer
+cert-to-efi-sig-list -g "${uuid}" PK.crt PK.esl
+sign-efi-sig-list -g "${uuid}" -k PK.key -c PK.crt PK PK.esl PK.auth
+
+# Key Exchange Key
+
+openssl req -newkey rsa:4096 -nodes -keyout KEK.key -new -x509 -sha256 -days 3650 -subj "/CN=Gentoo Key Exchange Key/" -out KEK.crt
+openssl x509 -outform DER -in KEK.crt -out KEK.cer
+cert-to-efi-sig-list -g "${uuid}" KEK.crt KEK.esl
+sign-efi-sig-list -g "${uuid}" -k PK.key -c PK.crt KEK KEK.esl KEK.auth
+
+# Signature Database Key
+
+openssl req -newkey rsa:4096 -nodes -keyout db.key -new -x509 -sha256 -days 3650 -subj "/CN=Gentoo Signature Database Key/" -out db.crt
+openssl x509 -outform DER -in db.crt -out db.cer
+cert-to-efi-sig-list -g "${uuid}" db.crt db.esl
+sign-efi-sig-list -g "${uuid}" -k KEK.key -c KEK.crt db db.esl db.auth
+
+tee GUID.txt >/dev/null <<< "${uuid}"
+mkdir --parents ${keys_db}/{db,dbx,KEK,PK}
+
+for filename in *.auth; do
+	dir="${filename%.*}"
+	cp "${filename}" ${keys_db}/${dir}/
+done
+
+sign-efi-sig-list -g "${uuid}" -c PK.crt -k PK.key PK /dev/null rm_PK.auth
+cp rm_PK.auth ${keys_db}/PK/
