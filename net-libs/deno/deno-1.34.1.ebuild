@@ -23,6 +23,7 @@ CRATES="
 	asn1-rs-impl-0.1.0
 	ast_node-0.9.3
 	async-compression-0.3.15
+	async-compression-0.4.0
 	async-stream-0.3.4
 	async-stream-impl-0.3.4
 	async-trait-0.1.68
@@ -88,11 +89,11 @@ CRATES="
 	deno_emit-0.20.0
 	deno_graph-0.48.1
 	deno_lint-0.45.0
-	deno_lockfile-0.14.0
+	deno_lockfile-0.14.1
 	deno_media_type-0.1.0
-	deno_npm-0.3.0
+	deno_npm-0.6.0
 	deno_semver-0.2.2
-	deno_task_shell-0.11.0
+	deno_task_shell-0.12.0
 	der-0.6.1
 	der-0.7.3
 	der-parser-8.2.0
@@ -187,7 +188,7 @@ CRATES="
 	humantime-2.1.0
 	hyper-0.14.26
 	hyper-1.0.0-rc.3
-	hyper-rustls-0.23.2
+	hyper-rustls-0.24.0
 	idna-0.2.3
 	idna-0.3.0
 	if_chain-1.0.2
@@ -331,7 +332,7 @@ CRATES="
 	regex-1.7.1
 	regex-syntax-0.6.28
 	relative-path-1.8.0
-	reqwest-0.11.14
+	reqwest-0.11.18
 	resolv-conf-0.7.0
 	rfc6979-0.3.1
 	rfc6979-0.4.0
@@ -344,9 +345,10 @@ CRATES="
 	rustc_version-0.4.0
 	rusticata-macros-4.1.0
 	rustix-0.36.9
-	rustls-0.20.8
+	rustls-0.21.0
 	rustls-native-certs-0.6.2
 	rustls-pemfile-1.0.2
+	rustls-webpki-0.100.1
 	rustversion-1.0.12
 	rustyline-10.0.0
 	rustyline-derive-0.7.0
@@ -439,8 +441,6 @@ CRATES="
 	text_lines-0.6.0
 	thiserror-1.0.40
 	thiserror-impl-1.0.40
-	tikv-jemalloc-sys-0.5.3+5.3.0-patched
-	tikv-jemallocator-0.5.0
 	time-0.3.20
 	time-core-0.1.0
 	time-macros-0.2.8
@@ -448,7 +448,7 @@ CRATES="
 	tinyvec_macros-0.1.1
 	tokio-1.28.1
 	tokio-macros-2.1.0
-	tokio-rustls-0.23.4
+	tokio-rustls-0.24.0
 	tokio-socks-0.5.1
 	tokio-stream-0.1.12
 	tokio-util-0.7.7
@@ -494,7 +494,7 @@ CRATES="
 	utf-8-0.7.6
 	utf8parse-0.2.1
 	uuid-1.3.0
-	v8-0.71.1
+	v8-0.73.0
 	vcpkg-0.2.15
 	version_check-0.9.4
 	vsimd-0.8.0
@@ -553,7 +553,6 @@ CRATES="
 	zstd-sys-2.0.7+zstd.1.5.4
 "
 
-
 inherit cargo
 
 DESCRIPTION="A modern runtime for JavaScript and TypeScript"
@@ -561,7 +560,7 @@ DESCRIPTION="A modern runtime for JavaScript and TypeScript"
 # does not provide this value so instead repository is used
 HOMEPAGE="https://deno.land https://github.com/denoland/deno"
 
-_v8_commit="09b1430e7090eb1d3f1397276221c4e92403de57"
+_v8_commit="3e797a2aacc68a76b40f3992ce926cda9c576d98"
 SRC_URI="
 	$(cargo_crate_uris)
 	https://github.com/denoland/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
@@ -591,8 +590,9 @@ QA_FLAGS_IGNORED="usr/bin/${PN}"
 src_prepare() {
 	default
 
-	rm -rf ../cargo_home/gentoo/v8-0.71.1/v8
-	cp -r ../v8-${_v8_commit} ../cargo_home/gentoo/v8-0.71.1/v8
+	local rusty_v8_version=0.73.0
+	rm -rf ../cargo_home/gentoo/v8-${rusty_v8_version}/v8
+	cp -r ../v8-${_v8_commit} ../cargo_home/gentoo/v8-${rusty_v8_version}/v8
 }
 
 src_configure() {
