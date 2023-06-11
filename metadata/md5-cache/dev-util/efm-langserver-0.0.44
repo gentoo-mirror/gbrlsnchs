@@ -1,0 +1,13 @@
+BDEPEND=>=dev-lang/go-1.18 app-arch/unzip
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=General purpose language server
+EAPI=8
+HOMEPAGE=https://github.com/mattn/efm-langserver
+INHERIT=go-module
+KEYWORDS=~amd64
+LICENSE=MIT
+RESTRICT=strip
+SLOT=0
+SRC_URI=https://github.com/mattn/efm-langserver/archive/refs/tags/v0.0.44.tar.gz https://user.fm/files/v2-5874cee5cb19cbfebed47104ff7fddd3/efm-langserver-0.0.44-vendor.tar.xz
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	toolchain-funcs	513c31b3346458ed1f3878b57da6d61c	multilib	c19072c3cd7ac5cb21de013f7e9832e0	go-module	9c75e51a48520b2f01471c1f91762882
+_md5_=0b1ee265a9267c0b2b3fb8b3c6f85635
