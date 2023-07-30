@@ -15,7 +15,7 @@ RDEPEND="
 	dev-libs/openssl
 	sys-kernel/dracut
 	sys-boot/efibootmgr
-	sys-boot/systemd-boot
+	sys-apps/systemd-utils[boot]
 "
 DEPEND="${RDEPEND}"
 BDEPEND=""
