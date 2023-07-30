@@ -13,15 +13,22 @@ CRATES="
 	aes-gcm-0.10.1
 	aes-kw-0.2.1
 	ahash-0.7.6
+	ahash-0.8.3
 	aho-corasick-0.7.20
 	alloc-no-stdlib-2.0.4
 	alloc-stdlib-0.2.2
+	android-tzdata-0.1.1
+	anstream-0.3.2
+	anstyle-1.0.0
+	anstyle-parse-0.2.0
+	anstyle-query-1.0.0
+	anstyle-wincon-1.0.1
 	anyhow-1.0.70
 	arrayvec-0.7.2
 	asn1-rs-0.5.2
 	asn1-rs-derive-0.4.0
 	asn1-rs-impl-0.1.0
-	ast_node-0.9.3
+	ast_node-0.9.4
 	async-compression-0.3.15
 	async-compression-0.4.0
 	async-stream-0.3.4
@@ -37,9 +44,9 @@ CRATES="
 	base64-0.21.0
 	base64-simd-0.8.0
 	base64ct-1.6.0
-	basic-toml-0.1.2
 	bencher-0.1.5
 	better_scoped_tls-0.1.0
+	bincode-1.3.3
 	bit-set-0.5.3
 	bit-vec-0.6.3
 	bitflags-1.3.2
@@ -49,20 +56,22 @@ CRATES="
 	block-padding-0.3.2
 	brotli-3.3.4
 	brotli-decompressor-2.3.4
-	bumpalo-3.12.0
+	bumpalo-3.13.0
 	byteorder-1.4.3
 	bytes-1.4.0
 	cache_control-0.2.0
 	cbc-0.1.2
 	cc-1.0.79
 	cfg-if-1.0.0
-	chrono-0.4.22
+	chrono-0.4.26
 	cipher-0.4.4
-	clap-4.1.10
-	clap_complete-4.1.5
-	clap_complete_fig-4.1.2
-	clap_lex-0.3.3
+	clap-4.3.3
+	clap_builder-4.3.3
+	clap_complete-4.3.1
+	clap_complete_fig-4.3.1
+	clap_lex-0.5.0
 	clipboard-win-4.5.0
+	colorchoice-1.0.0
 	console_static_text-0.8.1
 	const-oid-0.9.2
 	convert_case-0.4.0
@@ -84,16 +93,20 @@ CRATES="
 	dashmap-5.4.0
 	data-encoding-2.3.3
 	data-url-0.2.0
-	deno_ast-0.26.0
-	deno_doc-0.62.0
-	deno_emit-0.20.0
-	deno_graph-0.48.1
-	deno_lint-0.45.0
+	deno-proc-macro-rules-0.3.2
+	deno-proc-macro-rules-macros-0.3.2
+	deno_ast-0.27.0
+	deno_core-0.197.0
+	deno_doc-0.63.1
+	deno_emit-0.24.0
+	deno_graph-0.49.0
+	deno_lint-0.49.0
 	deno_lockfile-0.14.1
 	deno_media_type-0.1.0
-	deno_npm-0.6.0
+	deno_npm-0.9.1
+	deno_ops-0.75.0
 	deno_semver-0.2.2
-	deno_task_shell-0.12.0
+	deno_task_shell-0.13.1
 	der-0.6.1
 	der-0.7.3
 	der-parser-8.2.0
@@ -107,11 +120,11 @@ CRATES="
 	dlopen-0.1.8
 	dlopen_derive-0.1.4
 	dotenv-0.15.0
-	dprint-core-0.60.0
-	dprint-plugin-json-0.17.2
-	dprint-plugin-markdown-0.15.2
-	dprint-plugin-typescript-0.84.4
-	dprint-swc-ext-0.9.0
+	dprint-core-0.62.1
+	dprint-plugin-json-0.17.4
+	dprint-plugin-markdown-0.15.3
+	dprint-plugin-typescript-0.85.0
+	dprint-swc-ext-0.10.0
 	dsa-0.6.1
 	dyn-clone-1.0.11
 	dynasm-1.2.3
@@ -130,7 +143,7 @@ CRATES="
 	errno-dragonfly-0.1.2
 	error-code-2.3.1
 	escape8259-0.5.2
-	eszip-0.41.0
+	eszip-0.45.0
 	fallible-iterator-0.2.0
 	fallible-streaming-iterator-0.1.9
 	fancy-regex-0.10.0
@@ -163,7 +176,7 @@ CRATES="
 	generic-array-0.12.4
 	generic-array-0.14.6
 	getrandom-0.1.16
-	getrandom-0.2.8
+	getrandom-0.2.10
 	ghash-0.5.0
 	glibc_version-0.1.2
 	glob-0.3.1
@@ -171,7 +184,8 @@ CRATES="
 	group-0.13.0
 	h2-0.3.17
 	hashbrown-0.12.3
-	hashlink-0.8.1
+	hashbrown-0.13.2
+	hashlink-0.8.2
 	heck-0.4.1
 	hermit-abi-0.1.19
 	hermit-abi-0.2.6
@@ -192,7 +206,6 @@ CRATES="
 	idna-0.2.3
 	idna-0.3.0
 	if_chain-1.0.2
-	import_map-0.13.0
 	import_map-0.15.0
 	indexmap-1.9.2
 	inotify-0.9.6
@@ -223,17 +236,17 @@ CRATES="
 	lexical-util-0.8.5
 	lexical-write-float-0.8.5
 	lexical-write-integer-0.8.5
-	libc-0.2.140
-	libffi-3.1.0
-	libffi-sys-2.1.0
+	libc-0.2.147
+	libffi-3.2.0
+	libffi-sys-2.3.0
 	libloading-0.7.4
 	libm-0.2.6
-	libsqlite3-sys-0.25.2
+	libsqlite3-sys-0.26.0
 	libz-sys-1.1.8
 	linked-hash-map-0.5.6
 	linux-raw-sys-0.1.4
 	lock_api-0.4.9
-	log-0.4.17
+	log-0.4.19
 	lru-cache-0.1.2
 	lsp-types-0.93.2
 	match_cfg-0.1.0
@@ -270,7 +283,6 @@ CRATES="
 	openssl-probe-0.1.5
 	ordered-float-2.10.0
 	os_pipe-1.0.1
-	os_str_bytes-6.4.1
 	output_vt100-0.1.3
 	outref-0.5.1
 	p224-0.13.2
@@ -289,7 +301,7 @@ CRATES="
 	pbkdf2-0.12.1
 	pem-rfc7468-0.6.0
 	pem-rfc7468-0.7.0
-	percent-encoding-2.2.0
+	percent-encoding-2.3.0
 	petgraph-0.6.3
 	phf-0.10.1
 	phf_generator-0.10.0
@@ -304,24 +316,24 @@ CRATES="
 	pkcs8-0.10.2
 	pkg-config-0.3.26
 	pmutil-0.5.3
+	pmutil-0.6.1
 	polyval-0.6.0
 	ppv-lite86-0.2.17
 	precomputed-hash-0.1.1
 	pretty_assertions-1.3.0
-	prettyplease-0.1.25
 	primeorder-0.13.1
 	proc-macro-crate-1.3.1
 	proc-macro-error-1.0.4
 	proc-macro-error-attr-1.0.4
 	proc-macro-hack-0.5.20+deprecated
 	proc-macro2-0.4.30
-	proc-macro2-1.0.56
+	proc-macro2-1.0.66
 	psm-0.1.21
 	pty2-0.1.0
-	pulldown-cmark-0.9.2
+	pulldown-cmark-0.9.3
 	quick-error-1.2.3
 	quote-0.6.13
-	quote-1.0.26
+	quote-1.0.28
 	radix_fmt-1.0.0
 	radix_trie-0.2.1
 	rand-0.8.5
@@ -339,7 +351,7 @@ CRATES="
 	ring-0.16.20
 	ripemd-0.1.3
 	rsa-0.7.2
-	rusqlite-0.28.0
+	rusqlite-0.29.0
 	rustc-hash-1.1.0
 	rustc_version-0.2.3
 	rustc_version-0.4.0
@@ -376,6 +388,7 @@ CRATES="
 	serde_json-1.0.94
 	serde_repr-0.1.9
 	serde_urlencoded-0.7.1
+	serde_v8-0.108.0
 	sha-1-0.10.0
 	sha1-0.10.5
 	sha2-0.10.6
@@ -402,41 +415,42 @@ CRATES="
 	string_cache_codegen-0.5.2
 	string_enum-0.4.0
 	strsim-0.10.0
+	strum-0.25.0
+	strum_macros-0.25.1
 	subtle-2.4.1
-	swc_atoms-0.5.3
-	swc_bundler-0.213.23
-	swc_common-0.31.4
+	swc_atoms-0.5.6
+	swc_bundler-0.214.25
+	swc_common-0.31.12
 	swc_config-0.1.5
 	swc_config_macro-0.1.1
-	swc_ecma_ast-0.103.4
-	swc_ecma_codegen-0.138.11
+	swc_ecma_ast-0.104.5
+	swc_ecma_codegen-0.139.15
 	swc_ecma_codegen_macros-0.7.2
-	swc_ecma_dep_graph-0.105.10
-	swc_ecma_loader-0.43.6
-	swc_ecma_parser-0.133.10
-	swc_ecma_transforms_base-0.126.13
-	swc_ecma_transforms_classes-0.115.13
+	swc_ecma_dep_graph-0.106.12
+	swc_ecma_loader-0.43.14
+	swc_ecma_parser-0.134.12
+	swc_ecma_transforms_base-0.127.16
+	swc_ecma_transforms_classes-0.116.16
 	swc_ecma_transforms_macros-0.5.1
-	swc_ecma_transforms_optimization-0.186.20
-	swc_ecma_transforms_proposal-0.160.16
-	swc_ecma_transforms_react-0.172.19
-	swc_ecma_transforms_typescript-0.176.19
-	swc_ecma_utils-0.116.10
-	swc_ecma_visit-0.89.4
+	swc_ecma_transforms_optimization-0.187.21
+	swc_ecma_transforms_proposal-0.161.20
+	swc_ecma_transforms_react-0.173.18
+	swc_ecma_transforms_typescript-0.177.20
+	swc_ecma_utils-0.117.13
+	swc_ecma_visit-0.90.5
 	swc_eq_ignore_macros-0.1.1
-	swc_fast_graph-0.19.4
-	swc_graph_analyzer-0.20.5
+	swc_fast_graph-0.19.12
+	swc_graph_analyzer-0.20.13
 	swc_macros_common-0.3.7
-	swc_visit-0.5.5
-	swc_visit_macros-0.5.6
+	swc_visit-0.5.6
+	swc_visit_macros-0.5.7
 	syn-0.15.44
 	syn-1.0.109
-	syn-2.0.13
+	syn-2.0.22
 	synstructure-0.12.6
 	tar-0.4.38
 	tempfile-3.4.0
 	termcolor-1.2.0
-	testing_macros-0.2.8
 	text-size-1.1.0
 	text_lines-0.6.0
 	thiserror-1.0.40
@@ -448,6 +462,7 @@ CRATES="
 	tinyvec_macros-0.1.1
 	tokio-1.28.1
 	tokio-macros-2.1.0
+	tokio-metrics-0.2.2
 	tokio-rustls-0.24.0
 	tokio-socks-0.5.1
 	tokio-stream-0.1.12
@@ -469,7 +484,6 @@ CRATES="
 	trust-dns-resolver-0.22.0
 	trust-dns-server-0.22.0
 	try-lock-0.2.4
-	trybuild-1.0.79
 	twox-hash-1.6.3
 	typed-arena-2.0.1
 	typenum-1.16.0
@@ -493,8 +507,8 @@ CRATES="
 	urlpattern-0.2.0
 	utf-8-0.7.6
 	utf8parse-0.2.1
-	uuid-1.3.0
-	v8-0.73.0
+	uuid-1.4.1
+	v8-0.74.3
 	vcpkg-0.2.15
 	version_check-0.9.4
 	vsimd-0.8.0
@@ -560,7 +574,7 @@ DESCRIPTION="A modern runtime for JavaScript and TypeScript"
 # does not provide this value so instead repository is used
 HOMEPAGE="https://deno.land https://github.com/denoland/deno"
 
-_v8_commit="3e797a2aacc68a76b40f3992ce926cda9c576d98"
+_v8_commit="96bea5eafa4374f3c7aba1a838af5f259c0bab53"
 SRC_URI="
 	$(cargo_crate_uris)
 	https://github.com/denoland/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
@@ -590,7 +604,7 @@ QA_FLAGS_IGNORED="usr/bin/${PN}"
 src_prepare() {
 	default
 
-	local rusty_v8_version=0.73.0
+	local rusty_v8_version=0.74.3
 	rm -rf ../cargo_home/gentoo/v8-${rusty_v8_version}/v8
 	cp -r ../v8-${_v8_commit} ../cargo_home/gentoo/v8-${rusty_v8_version}/v8
 }
