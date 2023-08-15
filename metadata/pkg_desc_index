@@ -1,4 +1,5 @@
 app-admin/park 1.1.2: Configuration-based dotfiles manager
+app-admin/skaffold 2.6.2: Easy and repeatable Kubernetes development
 dev-java/jdtls-bin 1.23.0: Java language server
 dev-tex/texlab 5.5.1: LaTeX Language Server
 dev-util/efm-langserver 0.0.44: General purpose language server
