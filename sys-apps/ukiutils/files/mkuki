@@ -22,7 +22,7 @@ set -e
 # Generates an Unified Kernel Image.
 
 kernel="${kernel:-$(uname --kernel-release)}"
-version="${kernel%%-gentoo}"
+version="${kernel%%-gentoo*}"
 bootnum="$(efibootmgr | grep "BootCurrent" | awk '{ print $2 }')"
 
 log "Generating Unified Kernel Image"
