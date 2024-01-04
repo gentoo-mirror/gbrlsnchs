@@ -6,7 +6,7 @@ dev-go/gopls 0.14.0: "Go please" is the official Go language server
 dev-java/jdtls-bin 1.23.0: Java language server
 dev-tex/texlab 5.5.1: LaTeX Language Server
 dev-util/efm-langserver 0.0.44: General purpose language server
-net-libs/deno 1.35.3: A modern runtime for JavaScript and TypeScript
+net-libs/deno 1.39.1: A modern runtime for JavaScript and TypeScript
 net-misc/grpcurl 1.8.7: Command-line tool for interacting with gRPC servers
 sys-apps/ukiutils 20231013: Utility scripts to generate Universal Kernel Image artifacts
 sys-power/zzz 20230413: Really simple suspend script (from Void Linux)
