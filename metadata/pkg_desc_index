@@ -1,3 +1,4 @@
+app-admin/credstash 1.17.1: A utility for managing secrets in the cloud using AWS KMS and DynamoDB
 app-admin/park 1.1.2: Configuration-based dotfiles manager
 app-admin/skaffold 2.6.2: Easy and repeatable Kubernetes development
 app-editors/kakoune 2023.08.05-r1: Modal editor inspired by vim
