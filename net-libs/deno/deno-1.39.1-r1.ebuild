@@ -656,8 +656,8 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 	>=dev-lang/python-3
 	dev-libs/glib:2
-	dev-util/ninja
-	dev-util/gn
+	dev-build/ninja
+	dev-build/gn
 	sys-devel/clang
 "
 
