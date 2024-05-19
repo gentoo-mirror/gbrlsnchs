@@ -2,3 +2,5 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
+media-fonts/unifont:fontforge - Use media-gfx/fontforge to build fonts from source
+media-fonts/unifont:utils - Install unifont utilities
