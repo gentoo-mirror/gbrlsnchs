@@ -26,7 +26,7 @@ version="${kernel%%-gentoo*}"
 bootnum="$(efibootmgr | grep "BootCurrent" | awk '{ print $2 }')"
 
 log "Generating Unified Kernel Image"
-dracut --kver="${kernel}" --force /efi/gentoo.efi.signed
+env DISK="${disk}" PART="${part}" dracut --kver="${kernel}" --force /efi/gentoo.efi.signed
 
 log "Deleting previous UEFI entry (bootnum ${bootnum})"
 efibootmgr \
@@ -39,5 +39,5 @@ efibootmgr \
 	--create \
 	--label "${label}" \
 	--disk "${disk}" \
-	--part "${part}" \
+	--part "${part/p/}" \
 	--loader "\gentoo.efi.signed"
