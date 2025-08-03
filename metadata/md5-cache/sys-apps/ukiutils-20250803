@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install postinst unpack
+DEPEND=app-crypt/efitools dev-libs/openssl
+DESCRIPTION=Utility scripts to generate Universal Kernel Image artifacts
+EAPI=8
+HOMEPAGE=https://git.sr.ht/~gbrlsnchs/ebuilds
+KEYWORDS=~amd64
+LICENSE=0BSD
+RDEPEND=app-crypt/efitools dev-libs/openssl
+SLOT=0
+_md5_=74d54e4c6ec018fb46fda9d5768435eb
