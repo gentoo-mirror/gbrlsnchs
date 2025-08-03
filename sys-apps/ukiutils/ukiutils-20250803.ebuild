@@ -13,9 +13,6 @@ KEYWORDS="~amd64"
 RDEPEND="
 	app-crypt/efitools
 	dev-libs/openssl
-	sys-kernel/dracut
-	sys-boot/efibootmgr
-	sys-apps/systemd-utils[boot]
 "
 DEPEND="${RDEPEND}"
 BDEPEND=""
@@ -30,4 +27,10 @@ src_compile() {
 
 src_install() {
 	dobin ${FILESDIR}/*
+}
+
+pkg_postinst() {
+	elog "The script `mkuki` is no longer available"
+	elog "Use sys-kernel/installkernel with `dracut`, `efistub` and `uki` USE flags instead"
+	elog "See https://wiki.gentoo.org/wiki/Unified_kernel_image#Dracut"
 }
